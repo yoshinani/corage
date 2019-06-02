@@ -1,5 +1,5 @@
 # corage
-
+[![CircleCI](https://circleci.com/gh/yutanakano/corage/tree/develop.svg?style=svg)](https://circleci.com/gh/yutanakano/corage/tree/develop)
 > My scrumtrulescent Nuxt.js project
 
 ## Build Setup
