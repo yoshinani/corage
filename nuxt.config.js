@@ -50,7 +50,7 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  env: { NO_CONSOLE: process.env.NO_CONSOLE },
+  env: { APP_ENV: process.env.APP_ENV },
 
   /*
    ** Build configuration

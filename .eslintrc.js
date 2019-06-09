@@ -19,6 +19,6 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "no-console": process.env.NO_CONSOLE
+    "no-console": process.env.APP_ENV === 'production' ? 2 : 0,
   }
 }
