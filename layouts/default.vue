@@ -1,8 +1,18 @@
 <template>
   <div>
+    <Kamiza />
     <nuxt />
   </div>
 </template>
+
+<script>
+import Kamiza from '~/components/Kamiza.vue'
+export default {
+  components: {
+    Kamiza
+  }
+}
+</script>
 
 <style>
 html {
