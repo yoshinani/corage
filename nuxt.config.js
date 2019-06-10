@@ -4,6 +4,7 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+  srcDir: 'app',
 
   /*
    ** Headers of the page
