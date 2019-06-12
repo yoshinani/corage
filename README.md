@@ -3,6 +3,13 @@
 [![codecov](https://codecov.io/gh/yutanakano/corage/branch/develop/graph/badge.svg?token=PjiDq6TgMh)](https://codecov.io/gh/yutanakano/corage)
 > My scrumtrulescent Nuxt.js project
 
+## 開発環境構築
+
+``` sh
+# 環境構築用のスクリプトを実行
+sh setup.sh
+```
+
 ## Build Setup
 
 ``` bash
