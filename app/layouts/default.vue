@@ -2,14 +2,18 @@
   <div>
     <Kamiza />
     <nuxt />
+    <Shimoza />
   </div>
 </template>
 
 <script>
 import Kamiza from '~/components/Kamiza.vue'
+import Shimoza from '~/components/Shimoza.vue'
+
 export default {
   components: {
-    Kamiza
+    Kamiza,
+    Shimoza
   }
 }
 </script>
