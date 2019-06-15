@@ -30,7 +30,7 @@ export default {
   components: {
     Logo
   },
-  layout: 'top'
+  layout: 'index'
 }
 </script>
 
