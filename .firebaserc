@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "develop": "corage-dev",
+    "stage": "corage-stage",
+    "production": "corage-production"
+  }
+}
