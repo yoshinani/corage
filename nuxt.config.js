@@ -51,15 +51,15 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  env: [
-    { APP_ENV: process.env.APP_ENV },
-    { APIKEY: process.env.APIKEY },
-    { AUTHDOMAIN: process.env.AUTHDOMAIN },
-    { DATABASEURL: process.env.DATABASEURL },
-    { PROJECTID: process.env.PROJECTID },
-    { STORAGEBUCKET: process.env.STORAGEBUCKET },
-    { MESSAGINGSENDERID: process.env.MESSAGINGSENDERID }
-  ],
+  env: {
+    APP_ENV: process.env.APP_ENV,
+    APIKEY: process.env.APIKEY,
+    AUTHDOMAIN: process.env.AUTHDOMAIN,
+    DATABASEURL: process.env.DATABASEURL,
+    PROJECTID: process.env.PROJECTID,
+    STORAGEBUCKET: process.env.STORAGEBUCKET,
+    MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
+  },
 
   /*
    ** Build configuration
