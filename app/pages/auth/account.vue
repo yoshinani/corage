@@ -28,8 +28,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(['user']),
-    ...mapGetters(['isAuthenticated'])
+    ...mapState('auth', ['user']),
+    ...mapGetters('auth', ['isAuthenticated'])
   },
   mounted() {
     firebase.auth().onAuthStateChanged(user => {
@@ -37,7 +37,7 @@ export default {
     })
   },
   methods: {
-    ...mapActions(['setUser']),
+    ...mapActions('auth', ['setUser']),
     login() {
       firebase
         .auth()
