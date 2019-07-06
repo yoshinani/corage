@@ -33,7 +33,8 @@ export default {
   },
   mounted() {
     firebase.auth().onAuthStateChanged(user => {
-      this.setUser(user)
+      const { uid, email, displayName } = user
+      this.setUser({ uid, email, displayName })
     })
   },
   methods: {
