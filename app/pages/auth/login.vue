@@ -4,7 +4,7 @@
     <div v-if="isAuthenticated">
       {{ user.email }}でログイン中です<br />
       <button @click="logout">ログアウト</button><br />
-      <a href="/home">メンバーページへ</a>
+      <a href="/home">ホームへ</a>
     </div>
     <!-- ログインしていない時に表示される画面 -->
     <div v-else>
