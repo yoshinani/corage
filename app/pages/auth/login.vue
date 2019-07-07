@@ -1,40 +1,17 @@
 <template>
-  <div>
-    メール<br />
-    <input v-model="email" type="text" /><br />
-    パスワード<br />
-    <input v-model="password" type="password" /><br />
-    <button @click="login">ログイン</button>
-  </div>
+  <section class="container">
+    <div>
+      <login />
+    </div>
+  </section>
 </template>
 
 <script>
-import firebase from '~/plugins/firebase'
-import { mapActions, mapState, mapGetters } from 'vuex'
+import Login from '~/components/Auth/login.vue'
+
 export default {
-  data() {
-    return {
-      email: '',
-      password: ''
-    }
-  },
-  computed: {
-    ...mapState('auth', ['user']),
-    ...mapGetters('auth', ['isAuthenticated'])
-  },
-  methods: {
-    ...mapActions('auth', ['setUser']),
-    login() {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(user => {
-          this.$router.push('/home')
-        })
-        .catch(error => {
-          alert(error)
-        })
-    }
+  components: {
+    Login
   }
 }
 </script>
