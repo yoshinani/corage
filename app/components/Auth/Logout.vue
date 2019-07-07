@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import firebase from '~/plugins/firebase'
+import { fireauth } from '~/plugins/firebase'
 import { mapActions, mapState, mapGetters } from 'vuex'
 export default {
   computed: {
@@ -16,7 +16,7 @@ export default {
     ...mapGetters('auth', ['isAuthenticated'])
   },
   mounted() {
-    firebase.auth().onAuthStateChanged(user => {
+    fireauth.onAuthStateChanged(user => {
       const { uid, email, displayName } = user
       this.setUser({ uid, email, displayName })
     })
@@ -24,8 +24,7 @@ export default {
   methods: {
     ...mapActions('auth', ['setUser']),
     logout() {
-      firebase
-        .auth()
+      fireauth
         .signOut()
         .then(() => {
           this.setUser(null)
