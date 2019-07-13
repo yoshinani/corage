@@ -17,7 +17,7 @@ export const mutations = {
 
 // actionのコミットを使うことでミューテーションを呼び出す（コンポーネントには無い概念）
 export const actions = {
-  setUser({ commit }, payload) {
+  loginUser({ commit }, payload) {
     commit('setUser', payload)
   }
 }

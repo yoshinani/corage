@@ -23,7 +23,7 @@ export default {
     ...mapGetters('auth', ['isAuthenticated'])
   },
   methods: {
-    ...mapActions('auth', ['setUser']),
+    ...mapActions('auth', ['loginUser']),
     login() {
       fireauth
         .signInWithEmailAndPassword(this.email, this.password)
