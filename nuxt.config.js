@@ -61,6 +61,10 @@ export default {
     MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
   },
 
+  router: {
+    middleware: ['authenticated']
+  },
+
   /*
    ** Build configuration
    */
