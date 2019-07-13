@@ -18,16 +18,16 @@ export default {
   mounted() {
     fireauth.onAuthStateChanged(user => {
       const { uid, email, displayName } = user
-      this.setUser({ uid, email, displayName })
+      this.loginUser({ uid, email, displayName })
     })
   },
   methods: {
-    ...mapActions('auth', ['setUser']),
+    ...mapActions('auth', ['loginUser']),
     logout() {
       fireauth
         .signOut()
         .then(() => {
-          this.setUser(null)
+          this.loginUser(null)
           this.$router.push('/')
         })
         .catch(error => {
