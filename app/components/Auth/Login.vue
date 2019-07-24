@@ -1,9 +1,7 @@
 <template>
   <div>
-    メール<br />
-    <input v-model="email" type="text" /><br />
-    パスワード<br />
-    <input v-model="password" type="password" /><br />
+    <input v-model="email" type="text" placeholder="メールアドレス" /><br />
+    <input v-model="password" type="password" placeholder="パスワード" /><br />
     <button @click="login">ログイン</button>
   </div>
 </template>
