@@ -1,17 +1,17 @@
 <template>
   <section class="container">
     <div>
-      <logout />
+      <signout />
     </div>
   </section>
 </template>
 
 <script>
-import Logout from '~/components/Auth/logout.vue'
+import Signout from '~/components/Auth/Signout.vue'
 
 export default {
   components: {
-    Logout
+    Signout
   }
 }
 </script>
