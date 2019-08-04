@@ -2,7 +2,7 @@
   <!-- ログイン中に表示される画面 -->
   <div v-if="isAuthenticated">
     {{ user.email }}でログイン中です<br />
-    <button @click="logout">ログアウト</button><br />
+    <button @click="signout">ログアウト</button><br />
     <a href="/home">ホームへ</a>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     ...mapActions('auth', ['loginUser']),
-    logout() {
+    signout() {
       fireauth
         .signOut()
         .then(() => {
