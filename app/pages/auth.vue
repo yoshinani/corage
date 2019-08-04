@@ -2,19 +2,19 @@
   <section class="container">
     <div>
       <signup />
-      <login />
+      <signin />
     </div>
   </section>
 </template>
 
 <script>
-import Signup from '~/components/Auth/signup.vue'
-import Login from '~/components/Auth/login.vue'
+import Signup from '~/components/Auth/Signup.vue'
+import Signin from '~/components/Auth/Signin.vue'
 
 export default {
   components: {
     Signup,
-    Login
+    Signin
   }
 }
 </script>
