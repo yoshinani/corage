@@ -3,7 +3,7 @@
   <div v-if="isAuthenticated">
     {{ user.email }}でログイン中です<br />
     <button @click="signout">ログアウト</button><br />
-    <a href="/home">ホームへ</a>
+    <nuxt-link to="/home">ホームへ</nuxt-link>
   </div>
 </template>
 

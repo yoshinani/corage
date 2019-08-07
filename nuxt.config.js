@@ -4,7 +4,7 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
-  srcDir: 'app',
+  srcDir: 'src',
 
   /*
    ** Headers of the page
@@ -84,5 +84,5 @@ export default {
       }
     }
   },
-  watch: ['~/app']
+  watch: ['~/src']
 }
