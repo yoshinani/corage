@@ -1,8 +1,8 @@
-import { fireauth } from '~/plugins/firebase'
+import firebase from '~/plugins/firebase'
 
 export default function({ route, store, redirect }) {
   return new Promise((resolve, reject) => {
-    fireauth.onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged(user => {
       resolve(user || false)
     })
   })

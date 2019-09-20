@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { fireauth } from '~/plugins/firebase'
+import firebase from '~/plugins/firebase'
 import { mapActions, mapState, mapGetters } from 'vuex'
 export default {
   data() {
@@ -23,7 +23,8 @@ export default {
   methods: {
     ...mapActions('auth', ['loginUser']),
     signin() {
-      fireauth
+      firebase
+        .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(user => {
           this.$router.push('/home')

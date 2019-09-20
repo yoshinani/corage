@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { fireauth } from '~/plugins/firebase'
+import firebase from '~/plugins/firebase'
 import { mapActions, mapState, mapGetters } from 'vuex'
 export default {
   data() {
@@ -21,14 +21,15 @@ export default {
     ...mapGetters('auth', ['isAuthenticated'])
   },
   mounted() {
-    fireauth.onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged(user => {
       this.setUser(user)
     })
   },
   methods: {
     ...mapActions('auth', ['loginUser']),
     signup: function() {
-      fireauth
+      firebase
+        .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
           alert('登録が完了しました')
