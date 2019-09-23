@@ -7,8 +7,7 @@
 </template>
 
 <script>
-import firebase from '~/plugins/firebase'
-import { mapActions, mapState, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
   data() {
     return {
@@ -16,22 +15,13 @@ export default {
       password: ''
     }
   },
-  computed: {
-    ...mapState('auth', ['user']),
-    ...mapGetters('auth', ['isAuthenticated'])
-  },
   methods: {
-    ...mapActions('auth', ['loginUser']),
+    ...mapActions('auth', ['signIn']),
     signin() {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(user => {
-          this.$router.push('/home')
-        })
-        .catch(error => {
-          alert(error)
-        })
+      this.$store.dispatch('auth/signIn', {
+        email: this.email,
+        password: this.password
+      })
     }
   }
 }
