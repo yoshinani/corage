@@ -1,28 +1,56 @@
+import firebase from '~/plugins/firebase'
+import auth from '~/plugins/auth'
 export const strict = false
 
-// state:コンポーネントでいうdata
 export const state = () => ({
   user: null
 })
 
-// mutations:コンポーネントでいうmethod（と言うかsetter）
 // stateを唯一変更できるもの
 export const mutations = {
-  // vuexでは引数をpayloadと呼ぶっぽい
-  // payloadはオブジェクトにするべき（いっぱい入れれるし）
-  setUser(state, payload) {
+  setSignInState(state, payload) {
     state.user = payload
   }
 }
 
-// actionのコミットを使うことでミューテーションを呼び出す（コンポーネントには無い概念）
 export const actions = {
-  loginUser({ commit }, payload) {
-    commit('setUser', payload)
+  async signUp({ commit }, payload) {
+    await firebase
+      .auth()
+      .createUserWithEmailAndPassword(payload.email, payload.password)
+      .then(user => {
+        // TODO: 登録後の処理を考える
+        alert('登録が完了しました\nsigninしてください')
+      })
+      .catch(error => {
+        alert(error)
+      })
+  },
+  async signIn({ commit }, payload) {
+    await firebase
+      .auth()
+      .signInWithEmailAndPassword(payload.email, payload.password)
+      .then(user => {
+        commit('setSignInState', payload)
+        this.$router.push('/home')
+      })
+      .catch(error => {
+        alert(error)
+      })
+  },
+  async signOut({ commit }) {
+    await firebase
+      .auth()
+      .signOut()
+      .then(res => {
+        commit('setSignInState', false)
+      })
+  },
+  async checkAuth({ commit }) {
+    await auth().then(user => commit('setSignInState', user))
   }
 }
 
-// getters:コンポーネントでいうcomputed的なもの
 export const getters = {
   // isAuthenticatedを使用するgetter
   isAuthenticated(state) {
