@@ -3,7 +3,7 @@ import auth from '~/plugins/auth'
 export const strict = false
 
 export const state = () => ({
-  user: null
+  user: false
 })
 
 // stateを唯一変更できるもの
