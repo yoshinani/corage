@@ -14,7 +14,7 @@ export default {
     ...mapGetters('auth', ['isAuthenticated'])
   },
   methods: {
-    ...mapActions('auth', ['loginUser']),
+    ...mapActions('auth', ['signOut']),
     signout() {
       this.$store.dispatch('auth/signOut')
     }
