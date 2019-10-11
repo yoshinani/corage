@@ -44,6 +44,7 @@ export const actions = {
       .signOut()
       .then(res => {
         commit('setSignInState', false)
+        window.sessionStorage.clear()
       })
   },
   async checkAuth({ commit }) {
